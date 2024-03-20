@@ -1,0 +1,98 @@
+body  {
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 24px;
+}
+
+.links {
+  margin: 0;
+  width: 80%;
+}
+
+/* Barcha linklar uchun umumiy klas */
+a {
+  /* Linklarning tagidagi chiziqni olib tashlaydi */
+  text-decoration: none;
+  /* Bola elementlar otasiga nisbatan joylashishi uchun */
+  position: relative;
+}
+
+/* Birinchi qatordagi elemenilat linklari uchun klas har bir linkning ostiga chiziq tortadi*/
+.left a::before {
+  /* Psevda elementda hardoim shi clas berilishi kerak */
+ content: "";
+ /* oskli chiziqlar tepa o'ng tomonga taqalib turadi */
+ top: 0;
+ right: 0;
+ /* Ostki chiziqlar linkga nisbatan jolyashishi uchun beriladi linkning buning uchun position: relative;*/
+ position: absolute;
+ /* Ostki chiziqning eni 0% u hover holatida 100% gacha cho'iladi */
+ width: 0%;
+ /* Ostki chiziqhing bo'yi */
+ height: 2px;
+ /* ostki chiziqning rangi */
+ background-color: #000;
+ /* Ostki chiziq holatini o'zgartirishi uchun ketadigan vaqt */
+ transition: 0.2s;
+}
+
+/* Birinchi qatordagi linklar hover bo'lganda undagi chiziqlar to'liq yozuv enini chatdan o'nga qarab egallaydi */
+.left a:hover::before {
+ width: 100%;
+ /* chiziq element hover bo'lganda o'ng tomondan chiqib chap tomonga qarab tugaydi */
+ left: 0;
+}
+
+
+
+/* ikkinchi qatordagi elemenilat linklari uchun klas har bir linkning ostiga chiziq tortadi*/
+.center a::before {
+  /* Psevda elementda hardoim shi clas berilishi kerak */
+ content: "";
+ /* oskli chiziqlar pastki chap tomonga taqalib turadi */
+ bottom: 0;
+ right: 0;
+ /* Ostki chiziqlar linkga nisbatan jolyashishi uchun beriladi linkning buning uchun position: relative;*/
+ position: absolute;
+ /* Ostki chiziqning eni 0% u hover holatida 100% gacha cho'iladi */
+ width: 100%;
+ /* Ostki chiziqhing bo'yi */
+ height: 2px;
+ /* ostki chiziqning rangi */
+ background-color: #000;
+ /* Ostki chiziq holatini o'zgartirishi uchun ketadigan vaqt */
+ transition: 0.2s;
+ /* Chiziq dastlab ko'rinmaydi */
+ transform: scale(0);
+}
+
+/* Uchinchi qatordagi linklar hover bo'lganda undagi chiziqlar to'liq yozuv enini o'ngdan chapga qarab egallaydi */
+.center a:hover::before {
+ /* Chiziq hover holatoda yozuv enicha kattalashadi */
+ transform: scale(1);
+}
+
+
+/* Uchinchi qatordagi elemenilat linklari uchun klas har bir linkning ostiga chiziq tortadi*/
+.right a::before {
+  /* Psevda elementda hardoim shi clas berilishi kerak */
+ content: "";
+ /* oskli chiziqlar otcki chap tomonga taqalib turadi */
+ bottom: 0;
+ right: 0;
+ /* Ostki chiziqlar linkga nisbatan jolyashishi uchun beriladi linkning buning uchun position: relative;*/
+ position: absolute;
+ /* Ostki chiziqning eni 0% u hover holatida 100% gacha cho'iladi */
+ width: 0%;
+ /* Ostki chiziqhing bo'yi */
+ height: 2px;
+ /* ostki chiziqning rangi */
+ background-color: #000;
+ /* Ostki chiziq holatini o'zgartirishi uchun ketadigan vaqt */
+ transition: 0.2s;
+}
+
+/* Uchinchi qatordagi linklar hover bo'lganda undagi chiziqlar to'liq yozuv enini o'ngdan chapga qarab egallaydi */
+.right a:hover::before {
+ width: 100%;
+}
